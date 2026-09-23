@@ -81,20 +81,22 @@ a:hover { text-decoration: underline; }
 /* Profile / about */
 .profile-section {
   display: flex;
-  gap: 40px;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
   padding-top: 64px;
 }
-.photo-wrap { flex: 0 0 180px; }
+.photo-wrap { flex: none; }
 .profile-photo {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 50%;
   border: 1px solid var(--color-border);
   display: block;
 }
-.profile-text { flex: 1 1 auto; min-width: 260px; }
+.profile-text { max-width: 560px; }
 .profile-text h1 {
   font-family: var(--font-serif);
   font-size: 2rem;
@@ -105,7 +107,7 @@ a:hover { text-decoration: underline; }
   color: var(--color-muted);
   font-size: 1rem;
 }
-.intro { margin: 0; }
+.intro { margin: 0; text-align: left; }
 .cv-link { font-weight: 600; }
 
 /* Work entries (works in progress / pre-doctoral research) */
@@ -147,13 +149,8 @@ a:hover { text-decoration: underline; }
 
 /* Responsive */
 @media (max-width: 560px) {
-  .profile-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 48px;
-  }
-  .profile-text { min-width: 0; }
+  .profile-section { padding-top: 48px; }
+  .profile-photo { width: 140px; height: 140px; }
   .site-nav a { margin-left: 14px; font-size: 0.85rem; }
   .section { padding: 40px 20px; }
 }
